@@ -18,11 +18,12 @@
 
 (defn ^:private aot-namespaces
   [{:keys [aot deps-map] :as task}]
-  (if (= (first aot) 'all)
-    (->> (:paths deps-map)
-         (map io/file)
-         (map ns.find/find-namespaces-in-dir)
-         flatten)
+  (case (first aot)
+    all (->> (:paths deps-map)
+             (map io/file)
+             (map ns.find/find-namespaces-in-dir)
+             flatten)
+    none []
     aot))
 
 (defn apply! [{:keys [deps-map out] :as task}]

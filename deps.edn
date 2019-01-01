@@ -10,6 +10,6 @@
  {:jar
   {:main-opts ["-m" "cambada.jar"
                "-a" "all"
-               "--app-group-id" "luchiniatwork"
+               "--app-group-id" "semperos"
                "--app-artifact-id" "cambada"
                "--app-version" "1.0.0-SNAPSHOT"]}}}
